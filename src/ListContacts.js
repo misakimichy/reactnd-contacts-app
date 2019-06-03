@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
 class ListContacts extends Component {
@@ -74,8 +74,8 @@ class ListContacts extends Component {
           ))}
         </ol>
       </div>
-    )
+    );
   }
 }
 
-export default ListContacts
+export default ListContacts;

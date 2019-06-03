@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import ImageInput from './ImageInput'
-import serializeForm from 'form-serialize'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import ImageInput from './ImageInput';
+import serializeForm from 'form-serialize';
 
 /*
   CreateContact component is a standalone component and 
@@ -39,8 +39,8 @@ class CreateContact extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default CreateContact
+export default CreateContact;
