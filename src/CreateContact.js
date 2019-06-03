@@ -10,7 +10,7 @@ import serializeForm from 'form-serialize';
 */
 
 class CreateContact extends Component {
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault()
     const values = serializeForm(e.target, { hash: true })
 
@@ -21,6 +21,7 @@ class CreateContact extends Component {
   render() {
     return (
       <div>
+        {/* Add back button */}
         <Link
           className='close-create-contact'
           to='/'>
