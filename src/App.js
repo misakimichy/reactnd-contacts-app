@@ -38,18 +38,26 @@ class App extends Component {
     return (
       <div>
         {/* <Route exact path='/' render={() => ( */}
+          {this.state.screen === 'list' && (
           <ListContacts
             contacts={this.state.contacts}
             onDeleteContact={this.removeContact}
-          />
+            // toggle screen state between 'list' and 'create'
+            onNavigate={() => {
+              this.setState(() => ({
+                screen: 'create'
+              }));
+            }}
+          />)}
         {/* )} /> */}
         {/* <Route path='/create' render={({ history }) => ( */}
+          {this.state.screen === 'create' && (
           <CreateContact
-            onCreateContact={(contact) => {
-              this.createContact(contact)
-              // history.push('/')
-            }}
-          />
+            // onCreateContact={contact => {
+            //   this.createContact(contact)
+            //   // history.push('/')
+            // }}
+          />)}
         {/* )} /> */}
       </div>
     )
