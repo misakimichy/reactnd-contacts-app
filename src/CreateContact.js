@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 import ImageInput from './ImageInput'
 import serializeForm from 'form-serialize'
 
+/*
+  CreateContact component is a standalone component and 
+  used composition by adding it to the render() method in the App component.
+  This is in charge of the form to create new contacts.
+*/
+
 class CreateContact extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
