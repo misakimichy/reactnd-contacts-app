@@ -7,8 +7,6 @@ import { Route } from 'react-router-dom';
 class App extends Component {
   state = {
     contacts: [],
-    // screen property is used to control what content should display on the screen.
-    screen: 'list',
   }
 
   // Fetch contacts data from a remote server
@@ -43,14 +41,8 @@ class App extends Component {
           <ListContacts
             contacts={this.state.contacts}
             onDeleteContact={this.removeContact}
-            // toggle screen state between 'list' and 'create'
-            onNavigate={() => {
-              this.setState(() => ({
-                screen: 'create'
-              }));
-            }}
           />
-        )}/>
+        )} />
         <Route path='/create' component={CreateContact}
           />
       </div>
