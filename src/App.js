@@ -54,15 +54,15 @@ class App extends Component {
         )} />
         <Route path='/create' render={({ history }) => (
           <CreateContact
-          onCreateContact={contact => {
-            this.createContact(contact)
-            // Redirect us to the home route.
-            history.push('/')
-          }}
+            onCreateContact={contact => {
+              this.createContact(contact)
+              // Redirect us to the home route.
+              history.push('/')
+            }}
           />
         )} />
       </div>
-    )
+    );
   }
 }
 

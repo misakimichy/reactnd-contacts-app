@@ -10,7 +10,7 @@ class ListContacts extends Component {
   state = {
     query: ''
   }
-  updateQuery = (query) => {
+  updateQuery = query => {
     this.setState(() => ({
       query: query.trim()
     }))
@@ -19,12 +19,12 @@ class ListContacts extends Component {
     this.updateQuery('')
   }
   render() {
-    const { query } = this.state
-    const { contacts, onDeleteContact } = this.props
+    const { query } = this.state;
+    const { contacts, onDeleteContact } = this.props;
 
     const showingContacts = query === ''
       ? contacts
-      : contacts.filter((c) => (
+      : contacts.filter(c => (
           c.name.toLowerCase().includes(query.toLowerCase())
       ))
 
@@ -36,7 +36,7 @@ class ListContacts extends Component {
             type='text'
             placeholder='Search Contacts'
             value={query}
-            onChange={(event) => this.updateQuery(event.target.value)}
+            onChange={event => this.updateQuery(event.target.value)}
           />
           {/* 
             Replace anchor tag to Link component.
@@ -56,7 +56,7 @@ class ListContacts extends Component {
         )}
 
         <ol className='contact-list'>
-          {showingContacts.map((contact) => (
+          {showingContacts.map(contact => (
             <li key={contact.id} className='contact-list-item'>
               <div
                 className='contact-avatar'
