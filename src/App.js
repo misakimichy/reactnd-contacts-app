@@ -5,7 +5,9 @@ import CreateContact from './CreateContact';
 
 class App extends Component {
   state = {
-    contacts: []
+    contacts: [],
+    // screen property is used to control what content should display on the screen.
+    screen: 'list',
   }
 
   // Fetch contacts data from a remote server
@@ -25,7 +27,10 @@ class App extends Component {
         return c.id !== contact.id
       })
     }))
-
+    /* 
+      When the removeContact is invoked, 
+      invoke the remove method from ContactAPI.js 
+    */
     ContactsAPI.remove(contact)
   }
 
