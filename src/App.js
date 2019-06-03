@@ -22,7 +22,7 @@ class App extends Component {
 
   removeContact = contact => {
     this.setState(currentState => ({
-      contacts: currentState.contacts.filter((c) => {
+      contacts: currentState.contacts.filter(c => {
         return c.id !== contact.id
       })
     }))
@@ -31,6 +31,15 @@ class App extends Component {
       invoke the remove method from ContactAPI.js 
     */
     ContactsAPI.remove(contact)
+  }
+
+  createContact = contact => {
+    ContactsAPI.create(contact)
+      .then(contact => {
+        this.setState(currentState => ({
+          contacts: currentState.contacts.concat([contact])
+        }))
+      })
   }
 
   render() {
